@@ -1,20 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
   <h1>{{ group.title }}</h1>
-  <h6>{{ group.description }}</h6>
+  <p>{{ group.description }}</p>
   <ul></ul>
   {% for post in posts %}
-  <ul>
-    <li>
-      Автор: {{ post.author.get_full_name }}
-    </li>
-    <li>
-      Дата публикации: {{ post.pub_date|date:"d E Y" }}
-    </li>
-  </ul>
-  <p>
-    {{ post.text }}
-  </p>
+  <article>
+    {% include 'includes/post_card.html' %}
+  </article>
   {% if not forloop.last %}<hr>{% endif %}
   {% endfor %}
 {% endblock %}
