@@ -2,11 +2,8 @@
 {% block content %}
   <h1>{{ group.title }}</h1>
   <p>{{ group.description }}</p>
-  <ul></ul>
   {% for post in posts %}
-  <article>
     {% include 'includes/post_card.html' %}
-  </article>
-  {% if not forloop.last %}<hr>{% endif %}
+    {% if not forloop.last %}<hr>{% endif %}
   {% endfor %}
 {% endblock %}

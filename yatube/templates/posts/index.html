@@ -1,13 +1,11 @@
 {% extends 'base.html' %}
-  {% block content %}
-    <h1>Последние обновления на сайте</h1>
-    {% for post in posts %}
-    <article>
-      {% include 'includes/post_card.html' %}
-      {% if post.group %}
-        <a href="{% url 'posts:group_list' post.group.slug %}">{{ post.group.title }}</a>
-      {% endif %}
-    </article>
+{% block content %}
+  <h1>Последние обновления на сайте</h1>
+  {% for post in posts %}
+    {% include 'includes/post_card.html' %}
+    {% if post.group %}
+      <a href="{% url 'posts:group_list' post.group.slug %}">{{ post.group.title }}</a>
+    {% endif %}
     {% if not forloop.last %}<hr>{% endif %}
   {% endfor %}
 {% endblock %}
