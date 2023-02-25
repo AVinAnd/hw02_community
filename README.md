@@ -1,3 +1,47 @@
-# backend_community_homework
+# Проект спринта: сообщества.
 
-[![CI](https://github.com/yandex-praktikum/hw02_community/actions/workflows/python-app.yml/badge.svg?branch=master)](https://github.com/yandex-praktikum/hw02_community/actions/workflows/python-app.yml)
+Учебный django проект соц.сети yatube.
+
+## Технологии и запуск проекта
+
+Проект написан на языке python, с использованием фреймворка django. 
+Необходимые для работы проекта зависимости описаны в файле requirements.txt
+
+Для запуска проекта:
+- Клонируйте репозиторий
+``` 
+- git clone https://github.com/AVinAnd/hw02_community.git 
+```
+- Активируйте виртуальное окружение 
+
+```
+python -m venv venv
+source venv/scripts/activate
+```
+- Установите зависимости
+
+``` 
+pip install -r requirements.txt
+```
+- Выполните миграции 
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+- Запустите проект
+```
+python manage.py runserver
+```
+
+Проект доступен по адресу http://127.0.0.1:8000/
+
+## В проекте реализовано:
+- создано и зарегистрировано приложение Posts;
+
+- подключена база данных;
+
+- десять последних записей выводятся на главную страницу;
+
+- в админ-зоне доступно управление объектами модели Post, можно публиковать новые записи или редактировать/удалять существующие;
+
+- пользователь может перейти на страницу любого сообщества, где отображаются десять последних публикаций из этой группы.
